@@ -27,13 +27,13 @@
     "build:esm": "tsc --module esnext --target es2015 --outDir ./es",
     "build:cjs": "tsc --module commonjs --target es5 --outDir ./lib",
     "build:umd": "rollup -c",
+    "build": "node build:esm build:cjs build:umd",
     "prebuild": "node lint clean",
     "test": "karma start",
     "test-debug": "karma start --browsers=Chrome --single-run=false --debug",
     "test-watch": "karma start --browsers=Chrome --single-run=false --auto-watch",
     "coveralls": "cat ./test/coverage/lcov.info | coveralls",
     "pretest": "rimraf ./test/coverage",
-    "prepare": "node build"
   },
   "husky": {
     "hooks": {
