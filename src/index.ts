@@ -101,6 +101,8 @@ export async function toCanvas(
       canvas.style.width = `${width}`
       canvas.style.height = `${height}`
 
+      context.scale(ratio, ratio)
+
       if (options.backgroundColor) {
         context.fillStyle = options.backgroundColor
         context.fillRect(0, 0, canvas.width, canvas.height)
